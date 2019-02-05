@@ -18,4 +18,12 @@ class Song < ActiveRecord::Base
   def artist_name
     self.artist.name
   end
+
+  def note_contents(content)
+    self.note = Note.find_by_content(content)
+  end
+
+  def note_contents
+    self.note.contents
+  end
 end
